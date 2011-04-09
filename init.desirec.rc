@@ -84,6 +84,9 @@ on boot
     # lowmem killer minfree adjustments
     write /sys/module/lowmemorykiller/parameters/minfree 1536,2048,4096,9216,10240,10240
 
+    # sd card read speed fix
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 2048
+
 
 # compass/accelerometer daemon
 service akmd /system/bin/akmd
